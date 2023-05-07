@@ -16,6 +16,12 @@ const CreatePost = () => {
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, seLoading] = useState(false);
 
+  const handleSubmit = () => {};
+
+  const handleChange = () => {};
+
+  const handleSupriseMe = () => {};
+
   return (
     <section className="max-w-7xl mx-auto">
       <div>
@@ -25,6 +31,28 @@ const CreatePost = () => {
           DALL-E and share them with the community
         </p>
       </div>
+      <form className="mt-16 max-w-3xl" onSubmit={handleSubmit}>
+        <div className="flex flex-col gap-5">
+          <FormFiled
+            labelName="Your name"
+            type="text"
+            name="name"
+            placeholder="John Doe"
+            value={form.name}
+            handleChnge={handleChange}
+          />
+          <FormFiled
+            labelName="Prompt"
+            type="text"
+            name="prompt"
+            placeholder="A plush toy robot"
+            value={form.prompt}
+            handleChnge={handleChange}
+            isSurpriseMe
+            handleSupriseMe={handleSupriseMe}
+          />
+        </div>
+      </form>
     </section>
   );
 };
