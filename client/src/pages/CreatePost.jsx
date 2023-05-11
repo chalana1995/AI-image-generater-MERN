@@ -20,9 +20,14 @@ const CreatePost = () => {
 
   const handleSubmit = () => {};
 
-  const handleChange = () => {};
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-  const handleSupriseMe = () => {};
+  const handleSupriseMe = () => {
+    const randomPrompt = getRandomPrompt(form.prompt);
+    setForm({ ...form, prompt: randomPrompt });
+  };
 
   return (
     <section className="max-w-7xl mx-auto">
@@ -100,7 +105,7 @@ const CreatePost = () => {
           </p>
           <button
             type="submit"
-            className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto 
+            className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm  w-full sm:w-auto 
           px-5 py-2.5 text-center"
           >
             {loading ? "Sharing..." : "Share with the community"}
